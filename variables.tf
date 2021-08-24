@@ -15,7 +15,7 @@ variable "engine" {
 
 variable "skip_final_snapshot" {
   description = "Enable or disable skip final snapshot"
-  type        = string
+  type        = bool
 }
 
 variable "subnets" {
