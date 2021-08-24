@@ -54,7 +54,7 @@ resource "aws_security_group_rule" "rds_self_rules" {
   type              = each.value.type
 }
 
-resource "aws_db_instance" "postgres" {
+resource "aws_db_instance" "rds" {
   db_subnet_group_name   = aws_db_subnet_group.postgres.name
   allocated_storage      = var.postgres_allocated_storage
   engine                 = var.engine
