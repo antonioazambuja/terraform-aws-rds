@@ -13,6 +13,36 @@ variable "engine" {
   type        = string
 }
 
+variable "username" {
+  description = "Database Username"
+  type        = string
+}
+
+variable "password" {
+  description = "Database Password"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Database Name"
+  type        = string
+}
+
+variable "instance_class" {
+  description = "Instance Class"
+  type        = string
+}
+
+variable "engine_version" {
+  description = "Engine Version"
+  type        = string
+}
+
+variable "allocated_storage" {
+  description = "Allocated Storage"
+  type        = number
+}
+
 variable "skip_final_snapshot" {
   description = "Enable or disable skip final snapshot"
   type        = bool
