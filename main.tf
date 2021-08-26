@@ -55,7 +55,7 @@ resource "aws_security_group_rule" "rds_self_rules" {
 }
 
 resource "aws_db_instance" "rds" {
-  db_subnet_group_name   = aws_db_subnet_group.postgres.name
+  db_subnet_group_name   = aws_db_subnet_group.rds.name
   allocated_storage      = var.postgres_allocated_storage
   engine                 = var.engine
   engine_version         = var.postgres_engine_version
@@ -64,6 +64,6 @@ resource "aws_db_instance" "rds" {
   username               = var.postgres_username
   password               = var.postgres_password
   skip_final_snapshot    = var.skip_final_snapshot
-  vpc_security_group_ids = [ aws_security_group.postgres.id ]
+  vpc_security_group_ids = [ aws_security_group.rds.id ]
   tags                   = merge(var.rds_tags, { Name=var.name })
 }
